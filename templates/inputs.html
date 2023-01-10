@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Scanner - Search Inputs</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<div class="main-container">
+    <div class="sub-container">
+        <h1>Image Scanner - Search</h1>
+    </div>
+    <div class="sub-container">
+        <form action="/search">
+            <label for="input-image">Upload Search Image:</label>
+            <input id="input-image" type="file" accept="image/jpeg">
+            <button type="button" id="upload-image-file-btn">Upload</button>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $('#upload-image-file-btn').click(function(){
+            console.log('asdsad asd');
+        });
+
+    });
+</script>
+
+</body>
+</html>
