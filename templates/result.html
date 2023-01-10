@@ -11,14 +11,13 @@
 
 <div class="main-container">
     <div class="sub-container">
-        <h1>Image Scanner - Input</h1>
+        <h1>Image Scanner - Search</h1>
     </div>
     <div class="sub-container">
-        <form action="/upload" enctype="multipart/form-data" method="post">
-            <label for="input-image">Upload Search Image:</label>
-            <input name="input_image" id="input-image" type="file" accept="image/jpeg">
-            <button type="submit" id="upload-image-file-btn">Upload</button>
-        </form>
+        <a href="/">Search for new image</a>
+    </div>
+    <div class="sub-container">
+        <h2>Search Results</h2>
     </div>
 
 </div>
@@ -26,11 +25,10 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
-        $('#upload-image-file-btn').click(function(){
-            console.log('asdsad asd');
-        });
-
+        console.log($(document));
     });
+
+
 </script>
 
 </body>
