@@ -59,7 +59,7 @@ def init_search_repo():
 def search_image(name):
     print("Image Searching in progress...")
     # testing
-    test_image_location = "./test_files/" + name
+    test_image_location = "./../test_files/" + name
 
     hex_val = get_dct_val(test_image_location)
 

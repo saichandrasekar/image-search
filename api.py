@@ -4,7 +4,7 @@
 from flask import Flask, render_template, request, send_file
 import time as time_
 
-from service import init_search_repo
+from service import init_search_repo, search_image as service
 
 app = Flask(__name__)
 init_search_repo()
@@ -33,4 +33,12 @@ def upload_file():
 
 @app.route("/search", methods=['GET'])
 def search_image():
-    return render_template('result.html')
+    test_image_name = request.args.get('test-file-name', '')
+
+    print(test_image_name)
+
+    result_image = service(test_image_name)
+    if result_image is not None:
+        return send_file(result_image, mimetype='image/jpeg')
+    else:
+        return render_template('result-404.html'), 404
