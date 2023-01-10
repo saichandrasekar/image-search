@@ -4,7 +4,7 @@
 from flask import Flask, render_template, request, send_file
 import time as time_
 
-from service import init_search_repo, search_image as service
+from service import init_search_repo, search_image_repo
 
 app = Flask(__name__)
 init_search_repo()
@@ -22,7 +22,7 @@ def upload_file():
         new_file_name = str(round(time_.time() * 1000)) + '_' + f.filename
 
         print("New file Name :", new_file_name)
-        f.save('./../test_files/' + new_file_name)
+        f.save('./test-image/' + new_file_name)
 
         response = {
             'status': 'success',
@@ -35,9 +35,9 @@ def upload_file():
 def search_image():
     test_image_name = request.args.get('test-file-name', '')
 
-    print(test_image_name)
+    print("Test Image Name:",test_image_name)
 
-    result_image = service(test_image_name)
+    result_image = search_image_repo(test_image_name)
     if result_image is not None:
         return send_file(result_image, mimetype='image/jpeg')
     else:

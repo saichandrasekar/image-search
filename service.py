@@ -46,20 +46,21 @@ def get_dct_val(name):
 
 def init_search_repo():
     # W:\06-chan\01-workspace\test-data\archive\dataset\frost
-    image_names = sorted(glob.glob('./../image_repo/archive/dataset/frost/*.jpg'))
+    image_names = sorted(glob.glob('./image-repo/*.jpg'))
 
     # for every image calculate PHash value
     # print(image_names)
     print("Image Repository Scanning in progress..")
     for name in image_names:
+        #print(name)
         image_hash_dict[name] = get_dct_val(name)
     print("Image Repository Scanning complete...")
 
 
-def search_image(name):
+def search_image_repo(name):
     print("Image Searching in progress...")
     # testing
-    test_image_location = "./../test_files/" + name
+    test_image_location = "./test-image/" + name
 
     hex_val = get_dct_val(test_image_location)
 
@@ -72,13 +73,16 @@ def search_image(name):
             hash_hex_to_hash_array(image_hash_dict[image_name]),
             hash_hex_to_hash_array(hex_val)
         )
-        # print("{0:<30} {1}".format(image_name, distance))
+        print("{0:<30} {1}".format(image_name, distance))
 
         if distance == 0.0:
             found = True
             break
+    print("Image Searching in complete...")
 
     if (found):
+        print("Image found...")
         return matching_image_location
     else:
+        print("Image not found...")
         return None
