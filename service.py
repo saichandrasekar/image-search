@@ -6,8 +6,11 @@ import scipy
 
 import cv2
 
-# hash dictionary to store hash values on images
+# hash dictionary to store hash values on images dyrdytd
 image_hash_dict = {}
+
+aws_access_key_id=JHFDJHFJHD
+aws_secret_access_key=58757858KJGVKJVKJFHK879587587*&%&*%%
 
 
 def hash_array_to_hash_hex(hash_array):
